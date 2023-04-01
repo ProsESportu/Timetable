@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "table-ab7ea": {
+      "hosting": {
+        "Timetable": [
+          "zsem-2p"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "table-ab7ea"
+  }
+}
