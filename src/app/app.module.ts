@@ -8,11 +8,16 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { TableCellComponent } from './table-cell/table-cell.component';
+import { MatCardModule } from "@angular/material/card";
+import { TableComponent } from './table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatGridListModule  } from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableCellComponent
+    TableCellComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,9 +27,12 @@ import { TableCellComponent } from './table-cell/table-cell.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    MatCardModule,
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    MatTableModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

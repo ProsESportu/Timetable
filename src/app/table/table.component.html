@@ -1,0 +1,12 @@
+<mat-grid-list cols="6">
+    <mat-grid-list cols="1">
+      <mat-grid-tile *ngFor="let hour of (hours$|async)">
+        <mat-card><mat-card-title>{{hour}}</mat-card-title></mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list *ngFor="let time of (timeTable$|async)" cols="1">
+      <mat-grid-tile *ngFor="let data of time">
+        <app-table-cell [input]="data.lessons"></app-table-cell>
+      </mat-grid-tile>
+    </mat-grid-list>
+</mat-grid-list>
