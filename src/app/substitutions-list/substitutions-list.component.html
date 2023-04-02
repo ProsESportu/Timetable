@@ -1,0 +1,9 @@
+<p>substitutions-list works!</p>
+<mat-table [dataSource]="(substitutions$|async) ||[]">
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+        <td mat-cell *matCellDef="let el">{{el[column]}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+</mat-table>

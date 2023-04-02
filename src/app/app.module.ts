@@ -12,12 +12,14 @@ import { MatCardModule } from "@angular/material/card";
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatGridListModule  } from "@angular/material/grid-list";
+import { SubstitutionsListComponent } from './substitutions-list/substitutions-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableCellComponent,
     TableComponent,
+    SubstitutionsListComponent,
   ],
   imports: [
     BrowserModule,
