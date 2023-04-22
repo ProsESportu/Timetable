@@ -1,24 +1,26 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-table-cell',
   templateUrl: './table-cell.component.html',
   styleUrls: ['./table-cell.component.css']
 })
 export class TableCellComponent {
+  constructor() { }
+
   @Input() input: fullLesson[] = [{
     lesson: "lesson",
     teacher: { id: "n99.html", short: "mz" },
     room: { id: "s99.html", short: "sj4" }
   }]
-  @Input() teacher: teacher[]|null = []
-
+  @Input() teacher: teacher[] | null = [];
   processedData() {
-    return this.input.map((e, i) => {
-      try{
-      e.teacher.long = this.teacher?.filter(f => f.id === e.teacher.id)[0].name
-      }
-      catch{}
+    return this.input.map(e => {
+      e.teacher.long = this.teacher?.filter(f =>
+        f.short === e.teacher.short
+      )[0]?.name
+
       return e;
     })
   }

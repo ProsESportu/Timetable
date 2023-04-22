@@ -1,12 +1,8 @@
-<mat-grid-list cols="6">
-    <mat-grid-list cols="1">
-      <mat-grid-tile *ngFor="let hour of (hours$|async)">
-        <mat-card><mat-card-title>{{hour}}</mat-card-title></mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <mat-grid-list *ngFor="let time of (timeTable$|async)" cols="1">
-      <mat-grid-tile *ngFor="let data of time">
-        <app-table-cell [input]="data.lessons" [teacher]="(firebaseData.teachers$|async)"></app-table-cell>
-      </mat-grid-tile>
-    </mat-grid-list>
-</mat-grid-list>
+<div class="table">
+  <div class="column" *ngFor="let item of timeTable$|async">
+    <div class="cell" *ngFor="let cell of item">
+      <app-table-cell [input]="cell.lessons" [teacher]="teacher$|async"></app-table-cell>
+    </div>
+  </div>
+
+</div>

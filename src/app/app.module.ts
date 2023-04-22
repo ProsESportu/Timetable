@@ -10,8 +10,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { TableCellComponent } from './table-cell/table-cell.component';
 import { MatCardModule } from "@angular/material/card";
 import { TableComponent } from './table/table.component';
-import { MatTableModule } from '@angular/material/table';
-import {MatGridListModule  } from "@angular/material/grid-list";
 import { SubstitutionsListComponent } from './substitutions-list/substitutions-list.component';
 
 @NgModule({
@@ -33,8 +31,6 @@ import { SubstitutionsListComponent } from './substitutions-list/substitutions-l
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    MatTableModule,
-    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

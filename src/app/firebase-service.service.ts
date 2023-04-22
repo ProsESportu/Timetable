@@ -11,6 +11,7 @@ export class FirebaseServiceService {
   timeTable$
   substitutions$
   teachers$
+
   constructor() {
     const timeTableDataCollection = collection(this.firestore, "TimeTableData")
     const subtitutionsCollection = collection(this.firestore, "substitutions")
@@ -20,11 +21,14 @@ export class FirebaseServiceService {
         .pipe(map(e => JSON.parse(e[0]["timeTable"]))) as Observable<TimeTableData[][]>
     this.substitutions$ =
       collectionData(subtitutionsCollection)
-        .pipe(map(e => e[0]["result"])) as Observable<subtitution[]>
+        .pipe(map(e => e[0]["result"])) as Observable<(SubstitutionClass | "err")[]>
     this.teachers$ =
       collectionData(teacherCollection)
         .pipe(map(e => e[0]["result"])) as Observable<teacher[]>
+
   }
+
+
 }
 export interface TimeTableData {
   time: string;
@@ -41,16 +45,24 @@ export interface Room {
   id: string;
   short: string;
 }
-interface subtitution {
+
+
+export interface SubstitutionClass {
+  address: string;
+  result: Result[];
+}
+
+export interface Result {
   nr: string;
+  notes: string;
+  subject: string;
+  reason: string;
   teacher: string;
   class: string;
-  subject: string;
-  room: string;
   subctitute: string;
-  reason: string;
-  notes: string;
+  room: string;
 }
+
 interface teacher {
   id: string;
   name: string;

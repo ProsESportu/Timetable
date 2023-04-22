@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FirebaseServiceService } from '../firebase-service.service';
+import { FirebaseServiceService, SubstitutionClass } from '../firebase-service.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-substitutions-list',
@@ -8,7 +9,9 @@ import { FirebaseServiceService } from '../firebase-service.service';
 })
 export class SubstitutionsListComponent {
   constructor(public firebaseData: FirebaseServiceService) { }
-  substitutions$ = this.firebaseData.substitutions$
+  substitutions$ = this.firebaseData.substitutions$.pipe(map(e=>{
+    return e.filter(f=>f!=="err") as SubstitutionClass[]
+  }))
   displayedColumns = [
     "nr",
     "teacher",

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { FirebaseServiceService } from "../firebase-service.service";
 import { map } from 'rxjs';
@@ -10,8 +10,9 @@ import { map } from 'rxjs';
 export class TableComponent {
   constructor(public firebaseData: FirebaseServiceService) { }
   timeTable$ = this.firebaseData.timeTable$
+  teacher$ = this.firebaseData.teachers$
   header = ["Time", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday"]
-  hours$ = this.timeTable$.pipe(map(e =>{
-  return  e[0].map(f=>f.time)
+  hours$ = this.timeTable$.pipe(map(e => {
+    return e[0].map(f => f.time)
   }))
 }
