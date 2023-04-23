@@ -1,20 +1,20 @@
-.table {
+.table{
     display: flex;
-    flex-direction: row;
     overflow-x: scroll;
-    justify-content: space-evenly;
 }
-
-.column {
+.column{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+}
+.cell{
+    margin: 10px;
+}
+.time{
+    height: 150px;
+    width: fit-content;
 }
 .sticky{
     position: sticky;
-}
-.cell {
-    margin: 10px;
-    height: 150px;
+    left: 0;
+    z-index: 10;
 }

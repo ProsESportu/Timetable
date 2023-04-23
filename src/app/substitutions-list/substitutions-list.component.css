@@ -1,0 +1,7 @@
+table{
+    margin: 30px;
+}
+td{
+    border: 2px solid #000000;
+    border-collapse: collapse;
+}

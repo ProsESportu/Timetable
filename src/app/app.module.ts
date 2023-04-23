@@ -12,6 +12,7 @@ import { MatCardModule } from "@angular/material/card";
 import { TableComponent } from './table/table.component';
 import { SubstitutionsListComponent } from './substitutions-list/substitutions-list.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

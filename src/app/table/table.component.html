@@ -7,8 +7,8 @@
         </mat-card-header>
       </mat-card>
     </div>
-    <div class="cell sticky" *ngFor="let item of hours$|async">
-      <mat-card>
+    <div class="cell" *ngFor="let item of hours$|async">
+      <mat-card class="time">
         <mat-card-header>
           <mat-card-title>
             {{item}}
