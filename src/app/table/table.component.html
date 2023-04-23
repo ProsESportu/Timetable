@@ -1,6 +1,34 @@
 <div class="table">
-  <div class="column" *ngFor="let item of timeTable$|async">
-    <div class="cell" *ngFor="let cell of item">
+  <div class="column sticky">
+    <div class="cell">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{header[0]}}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div class="cell sticky" *ngFor="let item of hours$|async">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            {{item}}
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  
+  </div>
+
+  <div class="column" *ngFor="let item of timeTable$|async;let i=index">
+    <div class="cell">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{header[i+1]}}</mat-card-title>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+    <div class="cell" *ngFor="let cell of item;">
       <app-table-cell [input]="cell.lessons" [teacher]="teacher$|async"></app-table-cell>
     </div>
   </div>

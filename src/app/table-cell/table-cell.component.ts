@@ -17,10 +17,11 @@ export class TableCellComponent {
   @Input() teacher: teacher[] | null = [];
   processedData() {
     return this.input.map(e => {
-      e.teacher.long = this.teacher?.filter(f =>
+      e.teacher.long = this.teacher?.filter(f=>f.short)
+      .filter(f =>
         f.short === e.teacher.short
       )[0]?.name
-
+      
       return e;
     })
   }

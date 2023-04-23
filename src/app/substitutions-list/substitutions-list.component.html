@@ -1,7 +1,14 @@
 <table *ngFor="let day of (substitutions$|async)">
 
         <tr  *ngFor="let item of day.result">
-            <td>{{item|json}}</td>
+            <td>{{item.nr}}</td>
+            <td>{{item.teacher}}</td>
+            <td>{{item.class}}</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.room}}</td>
+            <td>{{item.subctitute}}</td>
+            <td>{{item.reason}}</td>
+            <td>{{item.notes}}</td>
         </tr>
-
+        
 </table>

@@ -1,13 +1,15 @@
-<mat-card *ngFor="let data of processedData()">
-    <mat-card-header>
-        <mat-card-title>{{data.lesson}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <mat-card-content class="flex">
-            <mat-card-subtitle>{{data.room.short}}</mat-card-subtitle>
-            <mat-card-subtitle>
-                {{data.teacher.long || data.teacher.short}}
-            </mat-card-subtitle>
+<mat-card >
+    <div *ngFor="let data of processedData()" class="flex">
+        <mat-card-header>
+            <mat-card-title>{{data.lesson}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-card-content class="flex">
+                <mat-card-subtitle>{{data.room.short}}</mat-card-subtitle>
+                <mat-card-subtitle>
+                    {{data.teacher.long || data.teacher.short}}
+                </mat-card-subtitle>
+            </mat-card-content>
         </mat-card-content>
-    </mat-card-content>
+    </div>
 </mat-card>
