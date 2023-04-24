@@ -3,10 +3,16 @@
 }
 mat-card{
     height: 150px;
+    align-items: center;
+    justify-content: center;
 }
 .content{
     display: flex;
     flex-direction: column;
     align-items: center;
 
+}
+.link{
+    text-decoration: none;
+    color: inherit;
 }

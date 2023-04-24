@@ -1,17 +1,18 @@
 .table{
     display: flex;
     overflow-x: scroll;
+    margin: 15px;
 }
 .column{
     display: flex;
     flex-direction: column;
 }
 .cell{
-    margin: 10px;
+    margin: 1px;
 }
 .time{
     height: 150px;
-    width: fit-content;
+    width: 100%;
 }
 .sticky{
     position: sticky;
