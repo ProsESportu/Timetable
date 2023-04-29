@@ -1,22 +1,20 @@
-<mat-card >
+<div class="card">
     <div *ngFor="let data of processedData()" class="flex">
         <ng-container *ngIf="data.lesson">
-        <mat-card-header>
-            <mat-card-title>{{data.lesson}}</mat-card-title>
-        </mat-card-header>
-
-            <mat-card-content class="content">
-                <mat-card-subtitle>
+            <h2>{{data.lesson}}</h2>
+            <div class="content">
+                <p>
                     <a [href]="'https://zsem.edu.pl/plany/plany/'+data.room.id" class="link">
                         {{data.room.short}}
                     </a>
-                </mat-card-subtitle>
-                <mat-card-subtitle>
+                </p>
+                <p>
                     <a [href]="'https://zsem.edu.pl/plany/plany/'+data.teacher.id" class="link">
-                    {{data.teacher.long || data.teacher.short}}
+                        {{data.teacher.long || data.teacher.short}}
                     </a>
-                </mat-card-subtitle>
-            </mat-card-content>
-            </ng-container>
+                </p>
+            </div>
+
+        </ng-container>
     </div>
-</mat-card>
+</div>

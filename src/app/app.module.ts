@@ -3,12 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore/lite';
 import { TableCellComponent } from './table-cell/table-cell.component';
-import { MatCardModule } from "@angular/material/card";
 import { TableComponent } from './table/table.component';
 import { SubstitutionsListComponent } from './substitutions-list/substitutions-list.component';
 
@@ -28,8 +26,6 @@ import { SubstitutionsListComponent } from './substitutions-list/substitutions-l
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    MatCardModule,
-    BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],

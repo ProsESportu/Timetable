@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { Firestore, collection, collectionData } from "@angular/fire/firestore";
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ export class AppComponent {
   title = 'Timetable';
 
 
-  constructor(){
+  constructor() {
 
   }
 }

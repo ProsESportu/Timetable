@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, collectionData } from '@angular/fire/firestore';
-import { collection } from '@firebase/firestore';
+import { Firestore, collectionData } from '@angular/fire/firestore/lite';
+import { collection } from '@firebase/firestore/lite';
 import { Observable, map } from "rxjs";
 
 @Injectable({
